@@ -4,13 +4,17 @@ import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 import { CheckBox } from 'react-native-web';
 
 
-function InputC({nome, modoSenha}) {
+function InputC({nome, modoSenha, value, onChange}) {
     
 
     return (
             
 
             <TextInput
+                value={value}
+                onChangeText={(text)=>{
+                    return onChange(text);
+                }}
                 placeholder = {nome}
                 secureTextEntry = {modoSenha}
                 style={{
