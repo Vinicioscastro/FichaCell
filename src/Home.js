@@ -82,7 +82,7 @@ function Home({ navigation }) {
           >
             <Button
               title="Adicionar"
-              onPress={() => navigation.navigate("CadastroAP")}
+              onPress={() => navigation.navigate("CadastroAP2")}
             ></Button>
           </View>
 

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Login from './src/Login'
 import Sobre from './src/Sobre'
 import CadastroAP from './src/CadastroAP'
+import CadastroAP2 from './src/CadastroAP2'
 import Home from './src/Home'
 import AlterarDeletar from './src/AlterarDeletar';
 import CadastrarUSU from './src/CadastroUSU';
@@ -22,6 +23,7 @@ export default function App() {
         <LoginStack.Screen name="Sobre" component={Sobre} />
         <LoginStack.Screen name="CadastrarUSU" component={CadastrarUSU} />
         <LoginStack.Screen name="CadastroAP" component={CadastroAP} />
+        <LoginStack.Screen name="CadastroAP2" component={CadastroAP2} />
         <LoginStack.Screen name="AlterarDeletar" component={AlterarDeletar} />
       </LoginStack.Navigator>
     </NavigationContainer>

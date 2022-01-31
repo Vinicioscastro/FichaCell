@@ -4,32 +4,24 @@ import InputC from "../componentes/InputC";
 import TituloC from "../componentes/TituloC";
 import { firestore } from "../firebase";
 
-function CadastroAP({ navigation, route }) {
-  const celular = route.params.celular;
-
-  const [modelo, setModelo] = React.useState(celular.modelo || "");
-  const [marca, setMarca] = React.useState(celular.marca || "");
-  const [ano, setAno] = React.useState(celular.ano || "");
-  const [processador, setProcessador] = React.useState(celular.processador || "");
-  const [ram, setRam] = React.useState(celular.ram || "");
-  const [valor, setValor] = React.useState(celular.valor || "");
-  const [descricao, setDescricao] = React.useState(celular.descricao || "");
+function CadastroAP2({ navigation}) {
+  
+  const [modelo, setModelo] = React.useState("");
+  const [marca, setMarca] = React.useState("");
+  const [ano, setAno] = React.useState("");
+  const [processador, setProcessador] = React.useState("");
+  const [ram, setRam] = React.useState("");
+  const [valor, setValor] = React.useState("");
+  const [descricao, setDescricao] = React.useState("");
 
   function cadastrar() {
-    if (celular.id) {
-      firestore
-        .collection("celulares")
-        .doc(celular.id)
-        .set({ modelo, marca, ano, processador, ram, valor, descricao })
-        .then(() => navigation.push("Home"))
-        .catch(() => console.log("erro"));
-    } else {
+    
       firestore
         .collection("celulares")
         .add({ modelo, marca, ano, processador, ram, valor, descricao })
         .then(() => navigation.push("Home"))
         .catch(() => console.log("erro"));
-    }
+    
   }
 
   return (
@@ -123,4 +115,4 @@ function CadastroAP({ navigation, route }) {
     </View>
   );
 }
-export default CadastroAP;
+export default CadastroAP2;
